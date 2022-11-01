@@ -1,0 +1,108 @@
+﻿<Window x:Class="SystemFanController.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemFanController"
+        mc:Ignorable="d"
+        Title="fan control application" Height="450" Width="772">
+    <Grid Margin="0,2,21,-2">
+
+        <GroupBox
+            Header="system"
+            HorizontalAlignment="Left"
+            Margin="10,10,0,0"
+            VerticalAlignment="Top"
+            Height="192"
+            Width="355">
+            <Grid
+                HorizontalAlignment="Left"
+                Height="187"
+                Margin="0,0,-2,0"
+                VerticalAlignment="Top"
+                Width="713">
+                <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="153" Margin="10,10,0,0" VerticalAlignment="Top" Width="324"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox
+            Header="services"
+            HorizontalAlignment="Left"
+            Margin="15,207,0,0"
+            VerticalAlignment="Top"
+            Height="178"
+            Width="350">
+            <Grid
+                HorizontalAlignment="Left"
+                Height="169"
+                Margin="0,0,-2,-4"
+                VerticalAlignment="Top"
+                Width="330">
+                <Label x:Name="label__1" Content="État du service: En cours d'execution" HorizontalAlignment="Left" Margin="9,1,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.469,0.323" Width="311"/>
+                <Button x:Name="button_svc_1" Content="Config" HorizontalAlignment="Left" Margin="235,36,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.389,0.27"/>
+                <Button x:Name="button1_svc_1" Content="Stop" HorizontalAlignment="Left" Margin="133,36,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="button2_svc_1" Content="Start" HorizontalAlignment="Left" Margin="30,36,0,0" VerticalAlignment="Top" Width="75"/>
+                <Separator HorizontalAlignment="Left" Height="6" Margin="10,82,0,0" VerticalAlignment="Top" Width="310" RenderTransformOrigin="0.251,-0.369">
+                    <Separator.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Separator.RenderTransform>
+                </Separator>
+                <Label x:Name="label_svc_2" Content="État du service: En cours d'execution" HorizontalAlignment="Left" Margin="9,82,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.469,0.323" Width="311"/>
+                <Button x:Name="button_svc_2" Content="Config" HorizontalAlignment="Left" Margin="235,122,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.389,0.27"/>
+                <Button x:Name="button1_svc_2" Content="Stop" HorizontalAlignment="Left" Margin="133,122,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="button2_svc_2" Content="Start" HorizontalAlignment="Left" Margin="30,122,0,0" VerticalAlignment="Top" Width="75"/>
+            </Grid>
+        </GroupBox>
+
+
+        <GroupBox
+            Header="speed"
+            HorizontalAlignment="Left"
+            Margin="386,207,0,0"
+            VerticalAlignment="Top"
+            Height="176"
+            Width="350">
+            <Grid
+                HorizontalAlignment="Left"
+                Height="169"
+                Margin="0,0,-2,-4"
+                VerticalAlignment="Top"
+                Width="330">
+                <Label x:Name="label_fan_1" Content="Fan #1" HorizontalAlignment="Left" Margin="9,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.469,0.323"/>
+                <Slider x:Name="slider_fan_1" HorizontalAlignment="Left" Margin="189,29,0,0" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.551,2.145"/>
+                <CheckBox x:Name="fan01_check_state" Content="Manual Mode" HorizontalAlignment="Left" Margin="70,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.876,0.382"/>
+                <Separator HorizontalAlignment="Left" Height="6" Margin="10,72,0,0" VerticalAlignment="Top" Width="310" RenderTransformOrigin="0.251,-0.369"/>
+                <Label x:Name="label_fan_2" Content="Fan #2" HorizontalAlignment="Left" Margin="9,99,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.469,0.323"/>
+                <Slider x:Name="fan02_check_state" HorizontalAlignment="Left" Margin="189,106,0,0" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.551,2.145"/>
+                <CheckBox x:Name="fan03_check_state" Content="Manual Mode" HorizontalAlignment="Left" Margin="70,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.876,0.382"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox
+            Header="overview"
+            HorizontalAlignment="Left"
+            Margin="381,10,0,0"
+            VerticalAlignment="Top"
+            Height="192"
+            Width="355">
+            <Grid
+                HorizontalAlignment="Left"
+                Height="163"
+                VerticalAlignment="Top"
+                Width="335">
+                <Label x:Name="label_main_temperature" Content="Temperature: 50" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            </Grid> 
+        </GroupBox>
+
+        <StatusBar DockPanel.Dock="Bottom" HorizontalAlignment = 'Right' VerticalAlignment = 'Bottom' Width = '723' Height = "23" Margin="10,25,0,5" >
+            <StatusBarItem>
+                <TextBlock Name="lblCursorPosition" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+    
+</Window>

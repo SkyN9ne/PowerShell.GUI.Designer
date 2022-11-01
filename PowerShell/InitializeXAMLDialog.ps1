@@ -8,7 +8,7 @@
     Param
     (
         [Parameter(Mandatory = $False, Position = 0)]
-        [string]$XAMLPath = "..\MainWindow.xaml",
+        [string]$XAMLPath = "..\Designer\MainWindow.xaml",
 
         #If enabled all objects will be named $Formname_Objectname
         #Example: $PSGUI_lbDialogs
@@ -62,7 +62,7 @@ function Initialize-XAMLDialog
     [void][System.Reflection.Assembly]::LoadWithPartialName('System.Windows')
 
     #Build the GUI
-    [xml]$xaml = Get-Content "F:\Scripts\Sandbox\PowerShell.GUI.Designer\MainWindow.xaml"
+    [xml]$xaml = Get-Content $XAMLPath 
      
     $reader=(New-Object System.Xml.XmlNodeReader $xaml)
     $Window=[Windows.Markup.XamlReader]::Load( $reader )
